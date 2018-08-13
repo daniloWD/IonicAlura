@@ -1,0 +1,22 @@
+<ion-split-pane>
+  <ion-menu [content]="content">
+    <ion-content>
+      <ion-item id="cabecalho-menu" class="cabecalho-menu">
+        <div>
+          <ion-avatar item-start>
+            <img src="assets/img/avatar-profile.jpg">
+          </ion-avatar>
+        </div>
+        <h2>Danilo Moreira</h2>
+        <p>xliudanilox@gmail.com</p>
+      </ion-item>
+      <ion-list>
+        <button ion-item menuClose *ngFor="let page of pages" (click)="goTo(page.component)">
+          <ion-icon [name]="page.icon" item-left></ion-icon>
+          {{ page.title}}
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>
